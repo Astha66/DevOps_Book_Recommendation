@@ -1,0 +1,28 @@
+
+
+<h2>Book List</h2>
+<table>
+    <thead>
+        <th>Author</th>
+        <th>Average Rating</th>
+        <th>image</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>isbn</th>
+    </thead>
+    <tr *ngFor ="let book of ib">
+        <td>{{book.author}}</td>
+      <!-- <td>{{book.average_rating}}</td>
+        <td>{{book.image_url}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.genre}}</td>
+        <td>{{book.isbn}}</td>--> 
+    </tr>
+</table>
+<script>
+ for(i=0;i<ib.length;i++)
+ {
+     document.write('<h4>')
+ }
+
+</script>
