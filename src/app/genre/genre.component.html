@@ -8,11 +8,12 @@
                         <div class="line-dec"></div>
                        
                         <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                            <li><a href="#tab1" class="active">Science Fiction</a></li>
+                            <li><a href="#tab1">Science Fiction</a></li>
                             <li><a href="#tab2">Horror</a></li>
                             <li><a href="#tab3">Comedy</a></li>
-                            <li><a href="#tab4">Bio</a></li>
-                            <li><a href="#tab5">Romance</a></li>
+                            <li><a href="#tab4">Romance</a></li>
+                            <li><a href="#tab5">Bio</a></li>
+                            
                             <li><a href="#tab6">Comics</a></li>
                             <li><a href="#tab7">Adventure</a></li>
                             <li><a href="#tab8">Poetry</a></li>
@@ -27,7 +28,8 @@
                                 <h4>Science Fiction</h4>
                                 <span> some content about Science</span>
                                 <br>
-                                <button (click)="explore()">Explore</button>
+                                <br>
+                                <button (click)="explorescifi()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
                             </div>
                         </div>
                         <div id="tab2">
@@ -36,6 +38,10 @@
                                 <h4>Horror</h4>
                                 <span>About Horror</span>
                                 <p>some more content.</p>
+                                <br>
+                                <br>
+                                <button (click)="explorehorror()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
                             </div>
                         </div>
                         <div id="tab3">
@@ -44,22 +50,35 @@
                                 <h4>Comedy</h4>
                                 <span>content about Comedy</span>
                                 <p>some more content</p>
+                                <br>
+                                <br>
+                                <button (click)="explorecomedy()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
                             </div>
                         </div>
+                       
                         <div id="tab4">
-                            <img src="assets/img/blog_item_04.jpg" alt="">
-                            <div class="text-content">
-                                <h4>Bio</h4>
-                                <span>some content</span>
-                                <p>some more content</p>
-                            </div>
-                        </div>
-                        <div id="tab5">
                             <img src="assets/img/blog_item_05.jpeg" alt="">
                             <div class="text-content">
                                 <h4>Romance</h4>
                                 <span>some content</span>
                                 <p>more content</p>
+                                <br>
+                                <br>
+                                <button (click)="exploreromance()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
+                            </div>
+                        </div>
+                        <div id="tab5">
+                            <img src="assets/img/blog_item_04.jpg" alt="">
+                            <div class="text-content">
+                                <h4>Bio</h4>
+                                <span>some content</span>
+                                <p>some more content</p>
+                                <br>
+                                <br>
+                                <button (click)="explorebio()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
                             </div>
                         </div>
                         <div id="tab6">
@@ -68,6 +87,10 @@
                                 <h4>Comics</h4>
                                 <span>some content</span>
                                 <p>more content</p>
+                                <br>
+                                <br>
+                                <button (click)="explorecomics()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
                             </div>
                         </div>
                         <div id="tab7">
@@ -76,6 +99,10 @@
                                 <h4>Adventure</h4>
                                 <span>some content</span>
                                 <p>more content</p>
+                                <br>
+                                <br>
+                                <button (click)="exploreadventure()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
                             </div>
                         </div>
                         <div id="tab8">
@@ -84,6 +111,10 @@
                                 <h4>Poetry</h4>
                                 <span>content</span>
                                 <p>more content</p>
+                                <br>
+                                <br>
+                                <button (click)="explorepoetry()" class="scroll-link mybutton button1" data-id='scifi'>Explore</button>
+    
                             </div>
                         </div>
                     </section>
@@ -92,3 +123,208 @@
         </div>
     </div>
 </div>
+<div *ngIf="scifi" class="scroll-link">
+    
+<div id="scifi" class="subtype">
+    <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+    <table class="books">
+        <thead>
+            <th>Author</th>
+            <th>Average Rating</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>ISBN</th>
+        </thead>
+        <tr *ngFor ="let book of ib" >
+            <td>{{book.authors}}</td>
+         <td>{{book.average_rating}}</td>
+            <td><img src="{{book.image_url}}"></td>
+            <td>{{book.title}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.isbn}}</td>
+        </tr>
+    </table>
+    </div>
+
+</div>
+<div *ngIf="horror" class="scroll-link">
+    
+    <div id="scifi" class="subtype">
+        <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+        <table class="books">
+            <thead>
+                <th>Author</th>
+                <th>Average Rating</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>ISBN</th>
+            </thead>
+            <tr *ngFor ="let book of ib" >
+                <td>{{book.authors}}</td>
+             <td>{{book.average_rating}}</td>
+                <td><img src="{{book.image_url}}"></td>
+                <td>{{book.title}}</td>
+                <td>{{book.genre}}</td>
+                <td>{{book.isbn}}</td>
+            </tr>
+        </table>
+        </div>
+    
+    </div>
+    <div *ngIf="comics" class="scroll-link">
+    
+        <div id="scifi" class="subtype">
+            <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+            <table class="books">
+                <thead>
+                    <th>Author</th>
+                    <th>Average Rating</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>ISBN</th>
+                </thead>
+                <tr *ngFor ="let book of ib" >
+                    <td>{{book.authors}}</td>
+                 <td>{{book.average_rating}}</td>
+                    <td><img src="{{book.image_url}}"></td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.genre}}</td>
+                    <td>{{book.isbn}}</td>
+                </tr>
+            </table>
+            </div>
+        
+        </div>
+
+        <div *ngIf="romance" class="scroll-link">
+    
+            <div id="scifi" class="subtype">
+                <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+                <table class="books">
+                    <thead>
+                        <th>Author</th>
+                        <th>Average Rating</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>ISBN</th>
+                    </thead>
+                    <tr *ngFor ="let book of ib" >
+                        <td>{{book.authors}}</td>
+                     <td>{{book.average_rating}}</td>
+                        <td><img src="{{book.image_url}}"></td>
+                        <td>{{book.title}}</td>
+                        <td>{{book.genre}}</td>
+                        <td>{{book.isbn}}</td>
+                    </tr>
+                </table>
+                </div>
+            
+            </div>
+
+            <div *ngIf="adventure" class="scroll-link">
+    
+                <div id="scifi" class="subtype">
+                    <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+                    <table class="books">
+                        <thead>
+                            <th>Author</th>
+                            <th>Average Rating</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>ISBN</th>
+                        </thead>
+                        <tr *ngFor ="let book of ib" >
+                            <td>{{book.authors}}</td>
+                         <td>{{book.average_rating}}</td>
+                            <td><img src="{{book.image_url}}"></td>
+                            <td>{{book.title}}</td>
+                            <td>{{book.genre}}</td>
+                            <td>{{book.isbn}}</td>
+                        </tr>
+                    </table>
+                    </div>
+                
+                </div>
+
+                <div *ngIf="comedy" class="scroll-link">
+    
+                    <div id="scifi" class="subtype">
+                        <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+                        <table class="books">
+                            <thead>
+                                <th>Author</th>
+                                <th>Average Rating</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Genre</th>
+                                <th>ISBN</th>
+                            </thead>
+                            <tr *ngFor ="let book of ib" >
+                                <td>{{book.authors}}</td>
+                             <td>{{book.average_rating}}</td>
+                                <td><img src="{{book.image_url}}"></td>
+                                <td>{{book.title}}</td>
+                                <td>{{book.genre}}</td>
+                                <td>{{book.isbn}}</td>
+                            </tr>
+                        </table>
+                        </div>
+                    
+                    </div>
+
+                    <div *ngIf="bio" class="scroll-link">
+    
+                        <div id="scifi" class="subtype">
+                            <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+                            <table class="books">
+                                <thead>
+                                    <th>Author</th>
+                                    <th>Average Rating</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Genre</th>
+                                    <th>ISBN</th>
+                                </thead>
+                                <tr *ngFor ="let book of ib" >
+                                    <td>{{book.authors}}</td>
+                                 <td>{{book.average_rating}}</td>
+                                    <td><img src="{{book.image_url}}"></td>
+                                    <td>{{book.title}}</td>
+                                    <td>{{book.genre}}</td>
+                                    <td>{{book.isbn}}</td>
+                                </tr>
+                            </table>
+                            </div>
+                        
+                        </div>
+
+                        <div *ngIf="poetry" class="scroll-link">
+    
+                            <div id="scifi" class="subtype">
+                                <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Book List</h2>
+                                <table class="books">
+                                    <thead>
+                                        <th>Author</th>
+                                        <th>Average Rating</th>
+                                        <th>Image</th>
+                                        <th>Title</th>
+                                        <th>Genre</th>
+                                        <th>ISBN</th>
+                                    </thead>
+                                    <tr *ngFor ="let book of ib" >
+                                        <td>{{book.authors}}</td>
+                                     <td>{{book.average_rating}}</td>
+                                        <td><img src="{{book.image_url}}"></td>
+                                        <td>{{book.title}}</td>
+                                        <td>{{book.genre}}</td>
+                                        <td>{{book.isbn}}</td>
+                                    </tr>
+                                </table>
+                                </div>
+                            
+                            </div>

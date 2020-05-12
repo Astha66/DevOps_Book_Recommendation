@@ -5,7 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { GenreComponent } from './genre/genre.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { ContactComponent } from './contact/contact.component';
-import { ScifiComponent } from './display/scifi/scifi.component';
+
 
 
 
@@ -16,7 +16,6 @@ const routes: Routes = [
 {path: 'About-Us',component: AboutComponent},
 {path: 'Testimonials', component: TestimonialComponent},
 {path: 'Contact-Us',component:ContactComponent},
-{path: 'Scifi' , component: ScifiComponent}
 
 ];
 
@@ -25,4 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[HomeComponent,GenreComponent,AboutComponent,TestimonialComponent,ContactComponent,ScifiComponent]
+export const routingComponents=[HomeComponent,GenreComponent,AboutComponent,TestimonialComponent,ContactComponent]

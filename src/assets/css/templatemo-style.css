@@ -44,7 +44,14 @@ p {
 	text-transform: uppercase;
 	text-decoration: none;
 	border-radius: 20px;
+	transition-duration: 0.4s;
 }
+
+  
+  .primary-white-button a:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
 
 .primary-blue-button a {
 	display: inline-block;

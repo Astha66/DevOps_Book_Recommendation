@@ -36,9 +36,37 @@
         <div class="text-content">
             <h2><em>Discover</em> <span> your</span> Roots</h2>
             <p>Welcome Readers! We recommend books as per your taste</p>
-            <div class="primary-white-button">
-                <a href="#" class="scroll-link" data-id="blog">Let's Start</a>
+            <div class="primary-white-button ">
+                <p style="font-family: Verdana; font-size: 20px; color: yellowgreen; font-weight: bold;">Want a recommendation?</p>
+                <a href="#" class="scroll-link" data-id="blog">Genre</a>
+                <br>
+                <br>
+                <a href="#" class="scroll-link" data-id="title" (click)="activatetitle()">Book Title</a>
+                <br>
+                <br>
+                <a href="#" class="scroll-link" data-id="blog">Username</a>
             </div>
         </div>
     </div>
+</div>
+
+<!--TITLE-->
+
+<div *ngIf= "title" class="scroll-link">
+ 
+    <div id= "title" class="titlecss">
+   
+<form class="example" style="margin:auto;max-width:300px">
+    <br><br><br><br><br><br><br><br><br>
+  <input type="text" placeholder="Search by Book Title" name="search">
+  <button type="submit"  (click)="showBookByTitle()"><i class="fa fa-search"></i></button>
+</form>
+    </div>
+
+</div>
+
+<div *ngIf="showtitle">
+<p>astha</p>
+
+
 </div>

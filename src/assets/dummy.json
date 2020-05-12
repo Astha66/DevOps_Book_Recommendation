@@ -1,0 +1,11 @@
+[
+    {
+        "author" : "Astha",
+        "average_rating" : "5",
+        "image_url" :"/assets/img/blo.jpeg",
+        "title": "MyBook",
+        "genre" : "fiction",
+        "isbn" : "232"
+    }
+]
+
