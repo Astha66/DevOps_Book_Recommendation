@@ -5,6 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+/**
+* @author Astha Sharma
+*
+* 
+*/
+
+
 export class AppComponent {
   title = 'BookRecommend';
 }

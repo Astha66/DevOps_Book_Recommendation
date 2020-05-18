@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * @author Astha Sharma
+ *
+ * 
+ */
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',

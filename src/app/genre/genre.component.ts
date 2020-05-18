@@ -3,6 +3,12 @@ import { Router } from '@angular/router';
 import { ServiceMainService } from '../service-main.service';
 import { IBook } from '../IBook';
 
+/**
+ * @author Astha Sharma
+ *
+ * 
+ */
+
 @Component({
   selector: 'app-genre',
   templateUrl: './genre.component.html',

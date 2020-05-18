@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * @author Astha Sharma
+ *
+ * 
+ */
 @Component({
   selector: 'app-testimonial',
   templateUrl: './testimonial.component.html',

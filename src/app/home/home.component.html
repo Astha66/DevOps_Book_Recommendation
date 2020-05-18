@@ -22,6 +22,15 @@
                     <li><a routerlink='/Contact-Us' class="scroll-link" data-id="contact-us">Contact Us</a></li>
                 </ul>
             </div>
+
+            <!--POPULAR BOOKS BUTTON-->
+            
+            <button class="button" style="vertical-align:middle" (click)="getPopularBooks()"><span>Popular Books</span></button>
+        
+                
+            <!--END OF POPULAR BOOKS BUTTON-->
+            
+            
             <!--/.navbar-collapse-->
         </nav>
         <!--/.navbar-->
@@ -30,13 +39,46 @@
 </div>
 
 
+
+
+
+
 <!-- home-->
 <div class="parallax-content baner-content" id="home">
+   
+    
+
+  
     <div class="container">
+     <!--<div class="container1">
+            <div class="scroll" scrollX="true">
+                <span *ngFor="let book of pb | async">{{book.image_url}}</span>
+            </div>
+        </div>  -->  
+        
+        <!--POPULAR BOOKS-->
+
+        <div class='container'>
+            <div class="row">
+            <div class="list-inline">
+            <div *ngFor="let book of pb" class="col-md-2" style="padding: 1px;">
+            <div class="list-inline-item">
+            <span class="badge badge-pill"><img src= {{book.image_url}}>  </span>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+        
+
+
+        
         <div class="text-content">
             <h2><em>Discover</em> <span> your</span> Roots</h2>
             <p>Welcome Readers! We recommend books as per your taste</p>
             <div class="primary-white-button ">
+                 
                 <p style="font-family: Verdana; font-size: 20px; color: yellowgreen; font-weight: bold;">Want a recommendation?</p>
                 <a href="#" class="scroll-link" data-id="blog">Genre</a>
                 <br>
@@ -44,29 +86,97 @@
                 <a href="#" class="scroll-link" data-id="title" (click)="activatetitle()">Book Title</a>
                 <br>
                 <br>
-                <a href="#" class="scroll-link" data-id="blog">Username</a>
+                <a href="#" class="scroll-link" data-id="username" (click)="activateusername()">goodReads Username</a>
             </div>
         </div>
     </div>
 </div>
 
+
+
 <!--TITLE-->
 
-<div *ngIf= "title" class="scroll-link">
+<div *ngIf= "title; else elseblock" class="scroll-link">
  
     <div id= "title" class="titlecss">
    
 <form class="example" style="margin:auto;max-width:300px">
     <br><br><br><br><br><br><br><br><br>
-  <input type="text" placeholder="Search by Book Title" name="search">
+  <input type="text" placeholder="Search by Book Title"[(ngModel)]="inputtitle" name="title">
   <button type="submit"  (click)="showBookByTitle()"><i class="fa fa-search"></i></button>
 </form>
     </div>
 
 </div>
+<ng-template #elseblock>
+    <div *ngIf="showtitle">
+      <!-- <p>SHOWING BOOKS BY TITLE</p>--> 
 
-<div *ngIf="showtitle">
-<p>astha</p>
+      <div id="scifi" class="subtype">
+        <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Recommendations</h2>
+        <table class="books">
+            <thead>
+                <th>Author</th>
+                <th>Average Rating</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>ISBN</th>
+            </thead>
+            <tr *ngFor ="let book of resultData" >
+                <td>{{book.authors}} </td>
+             <td>{{book.average_rating}}</td>
+                <td><img src="{{book.image_url}}"></td>
+                <td>{{book.title}}</td>
+                <td>{{book.goodreads_book_id}}</td>
+                <td>{{book.isbn}}</td>
+            </tr>
+        </table>
+        </div>
+        
+        
+        </div>
+</ng-template>
 
+
+<!--USERNAME-->
+
+<div *ngIf= "username; else elseblock1" class="scroll-link">
+ 
+    <div id= "username" class="titlecss1">
+   
+<form class="example" style="margin:auto;max-width:300px">
+    <br><br><br><br><br><br><br><br><br>
+  <input type="text" placeholder="Search by Username" [(ngModel)]="inputusername" name="username">
+  <button type="submit"  (click)="showBookByUsername()"><i class="fa fa-search"></i></button>
+</form>
+    </div>
 
 </div>
+<ng-template #elseblock1>
+    <div *ngIf="showuserbooks">
+        <!--<p>SHOWING BOOKS BY USERNAME</p>-->
+        <div id="scifi" class="subtype">
+            <h2 style="background-color: antiquewhite; font-weight: 600; text-align: center;">Recommendations</h2>
+            <table class="books">
+                <thead>
+                    <th>Author</th>
+                    <th>Average Rating</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>ISBN</th>
+                </thead>
+                <tr *ngFor ="let book of resultData" >
+                    <td>{{book.authors}}</td>
+                 <td>{{book.average_rating}}</td>
+                    <td><img src="{{book.image_url}}"></td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.goodreads_book_id}}</td>
+                    <td>{{book.isbn}}</td>
+                </tr>
+            </table>
+            </div>
+        
+        </div>
+</ng-template>
