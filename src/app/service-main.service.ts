@@ -107,7 +107,6 @@ export class ServiceMainService {
 
   }
 
-
   rating (postR: postRating){
     return this.http.post(this.ratingURL+postR.isbn, postR.rating);
   }
