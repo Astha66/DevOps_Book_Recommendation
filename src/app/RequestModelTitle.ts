@@ -9,6 +9,11 @@ export class postDataUsername{
     
 }
 
+export class postRating{
+    rating : number;
+    isbn : string;
+}
+
 export interface respData {
     author: string;
     average_rating : number;

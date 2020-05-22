@@ -1,3 +1,5 @@
+<body>
+
 <div class="tabs-content" id="blog">
     <div class="container">
         <div class="row">
@@ -123,6 +125,8 @@
         </div>
     </div>
 </div>
+
+<!--SCIFI-->
 <div *ngIf="scifi" class="scroll-link">
     
 <div id="scifi" class="subtype">
@@ -138,7 +142,42 @@
         </thead>
         <tr *ngFor ="let book of ib" >
             <td>{{book.authors}}</td>
-         <td>{{book.average_rating}}</td>
+         <td>{{book.average_rating}}<br> 
+            
+           
+            <!--POPUP-->
+            <button id="myBtn" (click)="popup()">Rate</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" *ngIf="activatepopup">
+
+  <!-- Modal content -->
+  <div class="modal-content" >
+    
+    
+<button class="close " (click)="spanclick()" >&times;</button> 
+     
+    <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+   <select [(ngModel)]="usrrating">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+   </select>
+    <button (click)="rating()" style="color: green;">Rate the book</button>
+    <p *ngIf = "successfulrating">Rated successfully!</p>
+    
+  </div>
+
+</div>
+
+       <!--POPUP END-->
+
+            
+        
+        
+        </td>
             <td><img src="{{book.image_url}}"></td>
             <td>{{book.title}}</td>
             <td>{{book.genre}}</td>
@@ -146,8 +185,13 @@
         </tr>
     </table>
     </div>
+    
 
 </div>
+
+
+
+<!--HORROR-->
 <div *ngIf="horror" class="scroll-link">
     
     <div id="scifi" class="subtype">
@@ -163,7 +207,42 @@
             </thead>
             <tr *ngFor ="let book of ib" >
                 <td>{{book.authors}}</td>
-             <td>{{book.average_rating}}</td>
+             <td>{{book.average_rating}}<br> 
+                
+               
+                <!--POPUP-->
+                <button id="myBtn" (click)="popup()">Rate</button>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal" *ngIf="activatepopup">
+    
+      <!-- Modal content -->
+      <div class="modal-content" >
+        
+        
+    <span class="close " (click)="spanclick()" >&times;</span> 
+         
+        <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+       <select [(ngModel)]="usrrating">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+       </select>
+        <button (click)="rating()" style="color: green;">Rate the book</button>
+        <p *ngIf = "successfulrating">Rated successfully!</p>
+        
+      </div>
+    
+    </div>
+    
+           <!--POPUP END-->
+    
+                
+            
+            
+            </td>
                 <td><img src="{{book.image_url}}"></td>
                 <td>{{book.title}}</td>
                 <td>{{book.genre}}</td>
@@ -171,8 +250,14 @@
             </tr>
         </table>
         </div>
+        
     
     </div>
+
+
+
+
+<!--COMICS-->
     <div *ngIf="comics" class="scroll-link">
     
         <div id="scifi" class="subtype">
@@ -188,7 +273,42 @@
                 </thead>
                 <tr *ngFor ="let book of ib" >
                     <td>{{book.authors}}</td>
-                 <td>{{book.average_rating}}</td>
+                 <td>{{book.average_rating}}<br> 
+                    
+                   
+                    <!--POPUP-->
+                    <button id="myBtn" (click)="popup()">Rate</button>
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal" *ngIf="activatepopup">
+        
+          <!-- Modal content -->
+          <div class="modal-content" >
+            
+            
+        <span class="close " (click)="spanclick()" >&times;</span> 
+             
+            <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+           <select [(ngModel)]="usrrating">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+           </select>
+            <button (click)="rating()" style="color: green;">Rate the book</button>
+            <p *ngIf = "successfulrating">Rated successfully!</p>
+            
+          </div>
+        
+        </div>
+        
+               <!--POPUP END-->
+        
+                    
+                
+                
+                </td>
                     <td><img src="{{book.image_url}}"></td>
                     <td>{{book.title}}</td>
                     <td>{{book.genre}}</td>
@@ -196,9 +316,10 @@
                 </tr>
             </table>
             </div>
+            
         
         </div>
-
+<!--ROMANCE-->
         <div *ngIf="romance" class="scroll-link">
     
             <div id="scifi" class="subtype">
@@ -214,7 +335,42 @@
                     </thead>
                     <tr *ngFor ="let book of ib" >
                         <td>{{book.authors}}</td>
-                     <td>{{book.average_rating}}</td>
+                     <td>{{book.average_rating}}<br> 
+                        
+                       
+                        <!--POPUP-->
+                        <button id="myBtn" (click)="popup()">Rate</button>
+            
+            <!-- The Modal -->
+            <div id="myModal" class="modal" *ngIf="activatepopup">
+            
+              <!-- Modal content -->
+              <div class="modal-content" >
+                
+                
+            <span class="close " (click)="spanclick()" >&times;</span> 
+                 
+                <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+               <select [(ngModel)]="usrrating">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+               </select>
+                <button (click)="rating()" style="color: green;">Rate the book</button>
+                <p *ngIf = "successfulrating">Rated successfully!</p>
+                
+              </div>
+            
+            </div>
+            
+                   <!--POPUP END-->
+            
+                        
+                    
+                    
+                    </td>
                         <td><img src="{{book.image_url}}"></td>
                         <td>{{book.title}}</td>
                         <td>{{book.genre}}</td>
@@ -222,9 +378,12 @@
                     </tr>
                 </table>
                 </div>
+                
             
             </div>
 
+
+        <!--ADVENTURE-->    
             <div *ngIf="adventure" class="scroll-link">
     
                 <div id="scifi" class="subtype">
@@ -240,7 +399,42 @@
                         </thead>
                         <tr *ngFor ="let book of ib" >
                             <td>{{book.authors}}</td>
-                         <td>{{book.average_rating}}</td>
+                         <td>{{book.average_rating}}<br> 
+                            
+                           
+                            <!--POPUP-->
+                            <button id="myBtn" (click)="popup()">Rate</button>
+                
+                <!-- The Modal -->
+                <div id="myModal" class="modal" *ngIf="activatepopup">
+                
+                  <!-- Modal content -->
+                  <div class="modal-content" >
+                    
+                    
+                <span class="close " (click)="spanclick()" >&times;</span> 
+                     
+                    <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+                   <select [(ngModel)]="usrrating">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                   </select>
+                    <button (click)="rating()" style="color: green;">Rate the book</button>
+                    <p *ngIf = "successfulrating">Rated successfully!</p>
+                    
+                  </div>
+                
+                </div>
+                
+                       <!--POPUP END-->
+                
+                            
+                        
+                        
+                        </td>
                             <td><img src="{{book.image_url}}"></td>
                             <td>{{book.title}}</td>
                             <td>{{book.genre}}</td>
@@ -248,9 +442,13 @@
                         </tr>
                     </table>
                     </div>
+                    
                 
                 </div>
 
+
+
+<!--COMEDY-->
                 <div *ngIf="comedy" class="scroll-link">
     
                     <div id="scifi" class="subtype">
@@ -266,7 +464,42 @@
                             </thead>
                             <tr *ngFor ="let book of ib" >
                                 <td>{{book.authors}}</td>
-                             <td>{{book.average_rating}}</td>
+                             <td>{{book.average_rating}}<br> 
+                                
+                               
+                                <!--POPUP-->
+                                <button id="myBtn" (click)="popup()">Rate</button>
+                    
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal" *ngIf="activatepopup">
+                    
+                      <!-- Modal content -->
+                      <div class="modal-content" >
+                        
+                        
+                    <span class="close " (click)="spanclick()" >&times;</span> 
+                         
+                        <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+                       <select [(ngModel)]="usrrating">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                       </select>
+                        <button (click)="rating()" style="color: green;">Rate the book</button>
+                        <p *ngIf = "successfulrating">Rated successfully!</p>
+                        
+                      </div>
+                    
+                    </div>
+                    
+                           <!--POPUP END-->
+                    
+                                
+                            
+                            
+                            </td>
                                 <td><img src="{{book.image_url}}"></td>
                                 <td>{{book.title}}</td>
                                 <td>{{book.genre}}</td>
@@ -274,9 +507,13 @@
                             </tr>
                         </table>
                         </div>
+                        
                     
                     </div>
 
+
+
+    <!--BIO-->
                     <div *ngIf="bio" class="scroll-link">
     
                         <div id="scifi" class="subtype">
@@ -292,7 +529,42 @@
                                 </thead>
                                 <tr *ngFor ="let book of ib" >
                                     <td>{{book.authors}}</td>
-                                 <td>{{book.average_rating}}</td>
+                                 <td>{{book.average_rating}}<br> 
+                                    
+                                   
+                                    <!--POPUP-->
+                                    <button id="myBtn" (click)="popup()">Rate</button>
+                        
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal" *ngIf="activatepopup">
+                        
+                          <!-- Modal content -->
+                          <div class="modal-content" >
+                            
+                            
+                        <span class="close " (click)="spanclick()" >&times;</span> 
+                             
+                            <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+                           <select [(ngModel)]="usrrating">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                           </select>
+                            <button (click)="rating()" style="color: green;">Rate the book</button>
+                            <p *ngIf = "successfulrating">Rated successfully!</p>
+                            
+                          </div>
+                        
+                        </div>
+                        
+                               <!--POPUP END-->
+                        
+                                    
+                                
+                                
+                                </td>
                                     <td><img src="{{book.image_url}}"></td>
                                     <td>{{book.title}}</td>
                                     <td>{{book.genre}}</td>
@@ -300,9 +572,12 @@
                                 </tr>
                             </table>
                             </div>
+                            
                         
                         </div>
 
+
+        <!--POETRY-->
                         <div *ngIf="poetry" class="scroll-link">
     
                             <div id="scifi" class="subtype">
@@ -318,7 +593,42 @@
                                     </thead>
                                     <tr *ngFor ="let book of ib" >
                                         <td>{{book.authors}}</td>
-                                     <td>{{book.average_rating}}</td>
+                                     <td>{{book.average_rating}}<br> 
+                                        
+                                       
+                                        <!--POPUP-->
+                                        <button id="myBtn" (click)="popup()">Rate</button>
+                            
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal" *ngIf="activatepopup">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content" >
+                                
+                                
+                            <span class="close " (click)="spanclick()" >&times;</span> 
+                                 
+                                <label class="dontshow"  id="isbn">{{book.isbn}}</label>
+                               <select [(ngModel)]="usrrating">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                               </select>
+                                <button (click)="rating()" style="color: green;">Rate the book</button>
+                                <p *ngIf = "successfulrating">Rated successfully!</p>
+                                
+                              </div>
+                            
+                            </div>
+                            
+                                   <!--POPUP END-->
+                            
+                                        
+                                    
+                                    
+                                    </td>
                                         <td><img src="{{book.image_url}}"></td>
                                         <td>{{book.title}}</td>
                                         <td>{{book.genre}}</td>
@@ -326,5 +636,9 @@
                                     </tr>
                                 </table>
                                 </div>
+                                
                             
                             </div>
+
+
+</body>

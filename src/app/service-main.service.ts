@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IBook } from './IBook';
-import { postData, respData, postDataUsername} from '/home/flavone01/Desktop/sem2/mosip/angular/angular projects/BookRecommend/src/app/RequestModelTitle';
+import { postData, respData, postDataUsername, postRating} from '/home/flavone01/Desktop/sem2/mosip/angular/angular projects/BookRecommend/src/app/RequestModelTitle';
 import { PopBook} from './PopularBooks';
 
 /**
@@ -30,7 +30,7 @@ export class ServiceMainService {
   postUrl: string="http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/recommend/booktitle/";
   postUrluser: string="";
   popbookurl: string="http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/popular";
- 
+  ratingURL: string="";
  
   constructor(private http:HttpClient) { }
 
@@ -105,5 +105,10 @@ export class ServiceMainService {
     
     return this.http.post(this.postUrluser+postDU.inputusername, postDU);
 
+  }
+
+
+  rating (postR: postRating){
+    return this.http.post(this.ratingURL+postR.isbn, postR.rating);
   }
 }

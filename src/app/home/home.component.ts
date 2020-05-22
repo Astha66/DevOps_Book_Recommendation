@@ -4,6 +4,7 @@ import { IBook } from '../IBook';
 import { HttpClient } from '@angular/common/http';
 import { postData, respData, postDataUsername} from '/home/flavone01/Desktop/sem2/mosip/angular/angular projects/BookRecommend/src/app/RequestModelTitle';
 import { PopBook} from '../PopularBooks';
+import {postRating} from '/home/flavone01/Desktop/sem2/mosip/angular/angular projects/BookRecommend/src/app/RequestModelTitle';
 
 /**
  * @author Astha Sharma
@@ -17,9 +18,10 @@ import { PopBook} from '../PopularBooks';
 })
 export class HomeComponent implements OnInit {
  
-
-
-
+  postRating: postRating;
+ 
+  isbn : string="";
+  showrating : boolean = false;
   showtitle : boolean = false; //for showing results after searching by title
   title : boolean=false; //for showing search box
   username : boolean=false; 
@@ -29,34 +31,90 @@ export class HomeComponent implements OnInit {
   data:string;
   posData:postData;
   resultData: respData
-
+  showpopbooks : boolean=false;
   posDatau:postDataUsername;
   public pb : PopBook[];
+  activatepopup: boolean = false;
+  activateclosepopup: boolean = false;
+  successfulrating: boolean = false;
+  modal: HTMLElement;
+  isbn1: HTMLElement;
+  usrrating :number;
+  posDataR : postRating;
   
 
   constructor(private dataservice: ServiceMainService) { }
 
   ngOnInit(): void {
-    
-      
-     
+    }
+//rating submit
+rating(){
+  this.isbn1= document.getElementById('isbn');//this returns the html element label
+  this.isbn = this.isbn1.innerText;//this takes the string inside it which is the ISBN of book
+  console.log(this.usrrating);
+  console.log(this.isbn);
+  this.successfulrating=true;
+
+  this.posDataR = new postRating();
+  this.posDataR.rating = this.usrrating;
+  this.posDataR.isbn = this.isbn;
+  this.dataservice.rating(this.posDataR).subscribe();
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+// When the user clicks the button, open the modal 
+popup() {
+  // this.modal.style.display = "block";
+  this.activatepopup=true;
   
-    
-  }
+ }
+ 
+ // When the user clicks on <span> (x), close the modal
+ spanclick() {
+   this.activateclosepopup=true;
+   this.activatepopup=false;
+   this.successfulrating = false;
+ 
+ }
+ 
+
+
+/*
+  activateRating(){
+    this.showrating=true;
+    this.title=false;
+    this.username = false;
+    this.showtitle=false;
+    this.showuserbooks = false;
+  }*/
+ 
 
   activatetitle(){
+    this.showrating=false;
     this.title=true;
     this.username = false;
     this.showtitle=false;
     this.showuserbooks = false;
   }
   activateusername(){
+    this.showrating=false;
     this.title=false;
     this.username = true;
     this.showtitle=false;
     this.showuserbooks = false;
   }
   showBookByTitle(){
+    this.showrating=false;
     this.showtitle=true;
     this.title = false;
     this.username = false;
@@ -78,10 +136,12 @@ export class HomeComponent implements OnInit {
   }
 
   getPopularBooks(){
+    this.showrating=false;
     this.username=false;
     this.showtitle=false;
     this.title=false;
     this.showuserbooks = false;
+    this.showpopbooks = true;
     this.dataservice.getPopularBooks()
     .subscribe(data => {
         this.pb=data;
@@ -98,6 +158,7 @@ export class HomeComponent implements OnInit {
 
 
   showBookByUsername(){
+    this.showrating=false;
     this.username=false;
     this.showtitle=false;
     this.title=false;
