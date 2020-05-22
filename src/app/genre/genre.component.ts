@@ -256,7 +256,4 @@ spanclick() {
   this.modal = document.getElementById("myModal");
 }
 
-
-
-
 }
