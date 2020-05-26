@@ -16,8 +16,8 @@ import { postRating } from '../RequestModelTitle';
   styleUrls: ['./genre.component.css']
 })
 export class GenreComponent implements OnInit {
-  isbn1 : any;
-  isbn : string;
+  isbn1 : HTMLElement;
+  isbn : number;
   activatepopup : boolean = false;
   activateclosepopup : boolean = false;
   scifi : boolean = false;
@@ -225,7 +225,7 @@ export class GenreComponent implements OnInit {
  }
  rating(){
   this.isbn1= document.getElementById('isbn');//this returns the html element label
-  this.isbn = this.isbn1.innerText;//this takes the string inside it which is the ISBN of book
+  this.isbn = parseInt(this.isbn1.innerText);//this takes the string inside it which is the ISBN of book
   console.log(this.usrrating);
   console.log(this.isbn);
   this.successfulrating=true;
@@ -253,7 +253,7 @@ spanclick() {
   this.activateclosepopup=true;
   this.activatepopup=false;
   this.successfulrating = false;
-  this.modal = document.getElementById("myModal");
+
 }
 
 }

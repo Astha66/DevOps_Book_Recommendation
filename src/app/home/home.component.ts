@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
  
   postRating: postRating;
  
-  isbn : string="";
+  isbn : number;
   showrating : boolean = false;
   showtitle : boolean = false; //for showing results after searching by title
   title : boolean=false; //for showing search box
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
 //rating submit
 rating(){
   this.isbn1= document.getElementById('isbn');//this returns the html element label
-  this.isbn = this.isbn1.innerText;//this takes the string inside it which is the ISBN of book
+  this.isbn = parseInt(this.isbn1.innerText);//this takes the string inside it which is the ISBN of book
   console.log(this.usrrating);
   console.log(this.isbn);
   this.successfulrating=true;
@@ -74,7 +74,7 @@ rating(){
 
 // When the user clicks the button, open the modal 
 popup() {
-  // this.modal.style.display = "block";
+
   this.activatepopup=true;
   
  }

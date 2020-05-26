@@ -15,6 +15,7 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("ASTHA")
   }
 
 }

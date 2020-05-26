@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -10,7 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
-//  {path: 'Home',redirectTo:'/Home',pathMatch:'full'},
+
 { path: 'Home', component:HomeComponent},
 {path: 'Genres', component: GenreComponent},
 {path: 'About-Us',component: AboutComponent},
@@ -23,6 +25,7 @@ const routes: Routes = [
  *
  * 
  */
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

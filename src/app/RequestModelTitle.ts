@@ -11,7 +11,7 @@ export class postDataUsername{
 
 export class postRating{
     rating : number;
-    isbn : string;
+    isbn : number;
 }
 
 export interface respData {

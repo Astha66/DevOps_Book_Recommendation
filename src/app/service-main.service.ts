@@ -17,20 +17,20 @@ import { PopBook} from './PopularBooks';
 })
 export class ServiceMainService {
 
-  private _url1: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/scifi";
-  private _url2: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/horror";
-  private _url3: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/romance";
-  private _url4: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/comedy";
-  private _url5: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/bio";
-  private _url6: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/comics";
-  private _url7: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/adventure";
-  private _url8: string = "http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/genre/poetry";
+  private _url1: string = "https://bookloungeservices.live/genre/scifi";
+  private _url2: string = "https://bookloungeservices.live/genre/horror";
+  private _url3: string = "https://bookloungeservices.live/romance";
+  private _url4: string = "https://bookloungeservices.live/genre/comedy";
+  private _url5: string = "https://bookloungeservices.live/genre/bio";
+  private _url6: string = "https://bookloungeservices.live/genre/comics";
+  private _url7: string = "https://bookloungeservices.live/genre/adventure";
+  private _url8: string = "https://bookloungeservices.live/genre/poetry";
  
  
-  postUrl: string="http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/recommend/booktitle/";
+  postUrl: string="https://bookloungeservices.live/recommend/booktitle/";
   postUrluser: string="";
-  popbookurl: string="http://flaskaws.eba-ba2hjvzy.ap-south-1.elasticbeanstalk.com/popular";
-  ratingURL: string="";
+  popbookurl: string="https://bookloungeservices.live/popular";
+  ratingURL: string="https://bookloungeservices.live/rating";
  
   constructor(private http:HttpClient) { }
 
@@ -108,6 +108,6 @@ export class ServiceMainService {
   }
 
   rating (postR: postRating){
-    return this.http.post(this.ratingURL+postR.isbn, postR.rating);
+    return this.http.post(this.ratingURL, postR);
   }
 }
